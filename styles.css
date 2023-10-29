@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.customFont{
+    font-family: 'Cinzel Decorative', serif;
+}
+.hero_index{
+    background-image: url('./assets/hero_index.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.hero_button{
+    position: relative;
+    z-index: 0;
+}
+.hero_button::after{
+    position: absolute;
+    content: '';
+    inset: 0 0 0 0;
+    margin: auto;
+    background-color: black;
+    width: 0px;
+    height: 100%;
+    z-index: -1;
+    transition: width .3s ease-in-out;
+}
+.hero_button:hover{
+    color: white!important;
+    
+}
+.hero_button:hover::after {
+    width: 100%;
+}
+.recientemente_agregado_imagenes{
+    transition: transform .3s ease-in-out;
+    overflow: hidden;
+    aspect-ratio: 1;
+    cursor: pointer;
+
+}
+.recientemente_agregado_imagenes:hover{
+    transform: scale(1.15);
+}
+.gallery{ 
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    place-content: center;
+}
+@media (max-width: 768px) {
+    .gallery{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+
+    }
+}
+.gallery img{
+    width: 100%;
+}
+.galleryInput{
+    border: 1px solid black;
+    padding: 10px 20px;
+    width: 100%;
+}
+.galleryInput:focus{
+    outline: 1px solid black;
+}
+.gallery div{
+    position: relative;
+cursor: pointer;
+
+}
+.gallery .overlay{
+    position: absolute;
+    transition: transform .3s ease-in-out;
+    transform: scaleY(0);
+    inset: 0 0 0 0;
+    height: 20%;
+    background-color: rgba(0, 0, 0, 0.500);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    backdrop-filter: blur(4px);
+    z-index: 1;
+transform-origin: top;
+text-align: center;
+padding: 1rem;
+
+}
+@media (max-width: 768px) {
+    .gallery .overlay{
+        height: 100%;
+    }
+}
+.gallery div img:hover + .overlay, .gallery .overlay:hover{
+transform: scaleY(1);
+}
+.truncate-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 200px; 
+}
+.quote_index{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.502),rgba(0, 0, 0, 0.502)),url('./assets/bg_section_index.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 50vh;
+}
+@media (max-width: 768px) {
+    .quote_index{
+        background-attachment: scroll;
+
+    }
+}
