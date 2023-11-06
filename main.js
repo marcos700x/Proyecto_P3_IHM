@@ -3,7 +3,7 @@ const gallery = document.querySelector('.gallery');
 const galleryButton = document.querySelector(".galleryButton")
 const galleryInput = document.querySelector(".galleryInput")
 
-galleryButton.addEventListener("click", fetchImages(galleryInput.value))
+galleryButton.addEventListener("click", () => fetchImages(galleryInput.value));
 
 galleryInput.addEventListener("keydown", (e)=>{
  if(e.key == "Enter" || e.keyCode == 13){
@@ -19,7 +19,7 @@ async function fetchImages(query) {
         gallery.innerHTML = ''
     }
     try {
-        const response = await fetch(`https://api.pexels.com/v1/search?query=${query}&orientation=square&per_page=8`, {
+        const response = await fetch(`https://api.pexels.com/v1/search?query=${query}&size=small&&orientation=square&per_page=8`, {
             headers: {
                 'Authorization': API_KEY
             }
@@ -54,4 +54,33 @@ async function fetchImages(query) {
     }
 }
 
+function isInViewport(elem) {
+    var distance = elem.getBoundingClientRect();
+    return (
+        distance.top < (window.innerHeight || document.documentElement.clientHeight) && distance.bottom > 0
+    );
+}
 
+const nav = document.querySelector('nav')
+const hero = document.querySelector('.hero')
+
+document.addEventListener('scroll', () => {
+    if(isInViewport(hero)){
+       nav.classList.remove("navVisible")
+    }else{
+       nav.classList.add("navVisible")
+
+    }
+})
+var LastScroll = document.documentElement.scrollTop || document.body.scrollTop;
+
+window.onscroll = function (){
+  var scroll = document.documentElement.scrollTop || document.body.scrollTop;
+  if(LastScroll < scroll){
+    document.querySelector("nav").style.transform = "translateY(-100%)"
+  }else{
+    document.querySelector("nav").style.transform = "translateY(0)"
+  }
+  LastScroll = scroll
+
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GazeWave | Inicio</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="searchScript.js" defer></script>
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <!-- Masonry -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js" defer></script>
+
+</head>
+
+<body>
+
+    <div>
+        <nav class="d-flex justify-content-center gap-5 align-items-center py-3 mb-3 bg-dark navVisible">
+            <a class="fs-5 text-decoration-none text-light" href="index.html">Inicio</a>
+            <a class="fs-5 text-decoration-none text-light" href="gallery.html">Explora</a>
+            <a class="fs-5 text-decoration-none text-light" href="">Nosotros</a>
+        </nav>
+        <div class="container mt-5 pt-5">
+                <a href="index.html" class="customFont fs-1 fw-bold text-decoration-none text-dark ">GazeWave</a>
+                <div class="d-flex">
+                        <input type="text" placeholder="Busca fotografías e imagenes" class="galleryInput rounded-0 ">
+                        <button class="btn btn-dark rounded-0 px-3 px-md-5 m-0  galleryButton ">Buscar</button>
+                </div>
+        </div>
+
+    </div>
+    <hr class="container">
+    <section class="container">
+        <div class="d-flex justify-content-between align-items-center my-4">
+            <h1 class="fs-1 galleryTitle">Fotos Recomendadas</h1>
+            <button class="btn border border-black rounded-0 px-md-5 fs-5 buttonFilters">Filtros</button>
+        </div>
+        <div class="justify-content-end align-items-center gap-3 containerFilters">
+            <div class="input-group mb-3">
+                <select class="form-select galleryInputSize" >
+                  <option selected value="default">Todas las orientaciones</option>
+                  <option value="landscape">Horizontal</option>
+                  <option value="portrait">Vertical</option>
+                  <option value="square">Cuadrado</option>
+                </select>
+              </div>
+
+              <div class=" input-group mb-3">
+                <div class="input-group">
+                    <input type="text" class="form-select rounded galleryInputColor" placeholder="Escribe aquí" value="#" data-bs-toggle="dropdown">
+                    <ul class="dropdown-menu w-100">
+                        <div class="contenedor-colores  p-2">
+                            <button class="dropdown-item galleryButtonColor" value="red"  style="background-color: red;"></button>
+                            <button class="dropdown-item galleryButtonColor" value="orange"  style="background-color: orange;"></button>
+                            <button class="dropdown-item galleryButtonColor" value="yellow"  style="background-color: yellow;"></button>
+                            <button class="dropdown-item galleryButtonColor" value="green"  style="background-color: green;"></button>
+                            <button class="dropdown-item galleryButtonColor" value="turquoise"  style="background-color: turquoise;"></button>
+                            <button class="dropdown-item galleryButtonColor" value="blue"  style="background-color: blue;"></button>
+                            <button class="dropdown-item galleryButtonColor" value="violet"  style="background-color: violet;"></button>
+                            <button class="dropdown-item galleryButtonColor" value="pink"  style="background-color: pink;"></button>
+                            <button class="dropdown-item galleryButtonColor" value="brown"  style="background-color: brown;"></button>
+                            <button class="dropdown-item galleryButtonColor" value="black"  style="background-color: black;"></button>
+                            <button class="dropdown-item galleryButtonColor" value="gray"  style="background-color: gray;"></button>
+                            <button class="dropdown-item galleryButtonColor" value="white"  style="background-color: white; border: 1px solid black;"></button>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="galleryExplore masonry-grid">
+
+        </div>
+    </section>
+
+    <footer class="bg-light mt-4">
+        <div class="container">
+            <footer class="py-5">
+                <div class="row">
+
+
+                    <div class="col-md-6">
+                        <h5 class="customFont fs-1 fw-bold">GazeWave.</h5>
+                    </div>
+
+                    <div class="col-md-6  mb-3">
+                        <form>
+                            <h5 class="fs-4">Suscríbete a nuestro newsletter</h5>
+                            <p>Obtenga un resumen mensual de nuestras novedades.</p>
+                            <div class="d-flex flex-column flex-sm-row w-100">
+                                <label for="newsletter1" class="visually-hidden">Correo Electronico</label>
+                                <input id="newsletter1" type="text" class="form-control rounded-0 border border-black"
+                                    placeholder="Email address">
+                                <button class="btn btn-dark rounded-0" type="button">Suscribirse</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                    <p>© 2023 GazeWave. All rights reserved.</p>
+                </div>
+            </footer>
+        </div>
+    </footer>
+
+</body>
+
+</html>

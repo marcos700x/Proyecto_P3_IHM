@@ -37,13 +37,15 @@
     width: 100%;
 }
 .recientemente_agregado_imagenes{
-    transition: transform .3s ease-in-out;
     overflow: hidden;
     aspect-ratio: 1;
     cursor: pointer;
+}
+.recientemente_agregado_imagenes img{
+    transition: transform .3s ease-in-out;
 
 }
-.recientemente_agregado_imagenes:hover{
+.recientemente_agregado_imagenes img:hover{
     transform: scale(1.15);
 }
 .gallery{ 
@@ -54,7 +56,7 @@
 }
 @media (max-width: 768px) {
     .gallery{
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 5px;
 
     }
@@ -70,36 +72,30 @@
 .galleryInput:focus{
     outline: 1px solid black;
 }
-.gallery div{
+.gallery div, .galleryExplore div{
     position: relative;
 cursor: pointer;
 
 }
-.gallery .overlay{
+.gallery .overlay, .galleryExplore .overlay{
     position: absolute;
-    transition: transform .3s ease-in-out;
-    transform: scaleY(0);
+    transition: opacity .3s ease-in-out;
     inset: 0 0 0 0;
-    height: 20%;
-    background-color: rgba(0, 0, 0, 0.500);
+    opacity: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0) 20%, #0000, rgba(0, 0, 0, 0.5) 80%);
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: end;
+    justify-content: start;
     color: white;
-    backdrop-filter: blur(4px);
     z-index: 1;
-transform-origin: top;
 text-align: center;
 padding: 1rem;
 
 }
-@media (max-width: 768px) {
-    .gallery .overlay{
-        height: 100%;
-    }
-}
-.gallery div img:hover + .overlay, .gallery .overlay:hover{
-transform: scaleY(1);
+
+.gallery div img:hover + .overlay, .gallery .overlay:hover, .galleryExplore div img:hover + .overlay, .galleryExplore .overlay:hover {
+    opacity: 1;
+
 }
 .truncate-text {
     white-space: nowrap;
@@ -119,4 +115,50 @@ transform: scaleY(1);
         background-attachment: scroll;
 
     }
+}
+nav{
+    transition: all .3s ease-in-out;
+    opacity: 0;
+}
+.navVisible{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    opacity: 1;
+}
+.masonry-item{
+    width: calc(33% - 30px);
+    margin: 15px;
+}
+@media (max-width: 768px) {
+    .masonry-item{
+        width: calc(50% - 10px);
+        margin: 5px;
+
+    }
+}
+.masonry-item img{
+    width: 100%;
+}
+.contenedor-colores{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 5px;
+}
+@media (max-width: 992px) {
+    .contenedor-colores{
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+@media (max-width: 530px) {
+    .contenedor-colores{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+.galleryButtonColor{
+    aspect-ratio: 16/9;
+}
+.containerFilters{
+    display: flex;
 }
