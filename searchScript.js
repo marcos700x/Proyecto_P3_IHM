@@ -5,12 +5,14 @@ const galleryInput = document.querySelector(".galleryInput")
 const galleryTitle = document.querySelector(".galleryTitle")
 const galleryInputColor = document.querySelector(".galleryInputColor")
 const galleryInputSize = document.querySelector(".galleryInputSize")
+const galleryColorIndicator = document.querySelector(".colorIndicatorGallery")
 
 const galleryButtonColor = document.querySelectorAll(".galleryButtonColor")
 
 galleryButtonColor.forEach((button) => {
     button.addEventListener("click", () => {
         galleryInputColor.value = button.getAttribute("value")
+        galleryColorIndicator.style.backgroundColor = button.getAttribute("value")
         fetchImages(galleryInput.value)
     })
 })
@@ -33,11 +35,8 @@ async function fetchImages(query) {
 
     if(galleryInput.value === ""){
         document.querySelector(".containerFilters").style.display = "none"
-        document.querySelector(".buttonFilters").style.display = "none"
-        console.log("bruh")
     }else{
         document.querySelector(".containerFilters").style.display = "flex"
-        document.querySelector(".buttonFilters").style.display = "block"
     }
 
     try {
@@ -61,7 +60,7 @@ async function fetchImages(query) {
                 overlay.classList.add("overlay")
                 const authorOverlay = document.createElement('span')
                 authorOverlay.innerText = photos[i].photographer
-                authorOverlay.classList.add("fs-5")
+                authorOverlay.classList.add("text-start")
                 overlay.appendChild(authorOverlay)
                 item.appendChild(img)
                 item.appendChild(overlay)

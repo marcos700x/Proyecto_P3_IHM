@@ -36,7 +36,7 @@ async function fetchImages(query) {
                 overlay.classList.add("overlay")
                 const authorOverlay = document.createElement('span')
                 authorOverlay.innerText = photos[i].photographer
-                authorOverlay.classList.add("fs-5")
+                authorOverlay.classList.add("text-start")
                 overlay.appendChild(authorOverlay)
                 item.appendChild(img)
                 item.appendChild(overlay)
