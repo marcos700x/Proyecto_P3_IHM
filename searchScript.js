@@ -36,7 +36,7 @@ async function fetchImages(query) {
     if(galleryInput.value === ""){
         document.querySelector(".containerFilters").style.display = "none"
     }else{
-        document.querySelector(".containerFilters").style.display = "flex"
+        document.querySelector(".containerFilters").style.display = screen.width > 530 ? "block" : "flex"
     }
 
     try {

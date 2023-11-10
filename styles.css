@@ -1,15 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+@font-face {
+    font-family: "OpenDyslexia";
+    src: url(fonts/OpenDyslexic-Regular.otf);
+}
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html{
-    overflow-x: hidden;
 
+.fuenteDislexia{
+    font-family: "OpenDyslexia"!important;
 }
-
 .customFont{
     font-family: 'Cinzel Decorative', serif;
 }
@@ -39,6 +42,16 @@ html{
 }
 .hero_button:hover::after {
     width: 100%;
+}
+.agregadosRecientemente{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+@media (max-width: 530px){
+    .agregadosRecientemente{
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 .recientemente_agregado_imagenes{
     overflow: hidden;
@@ -101,12 +114,7 @@ padding: 1rem;
     opacity: 1;
 
 }
-.truncate-text {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 200px; 
-}
+
 .quote_index{
     background-image: linear-gradient(rgba(0, 0, 0, 0.502),rgba(0, 0, 0, 0.502)),url('./assets/bg_section_index.jpg');
     background-size: cover;
@@ -159,9 +167,6 @@ nav{
     .contenedor-colores{
         grid-template-columns: repeat(4, 1fr);
     }
-    .containerFilters{
-        display: block!important;
-    }
 }
 .galleryButtonColor{
     aspect-ratio: 16/9;
@@ -188,10 +193,60 @@ color: rgba(33, 37, 41, 0.75);
 }
 @media (max-width: 768px) {
     .bg-nosotros{
-        background-image: linear-gradient(#0005,#0005),url("./assets/bg_nosotros_mobile.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.534),rgba(0, 0, 0, 0.551)),url("./assets/bg_nosotros_mobile.jpg");
         color: #f8f9fa;
     }
     .bg-nosotros p{
         color: #c5c5c5;
     }
 }
+.contenedorAccesibilidad{
+position: fixed;
+margin: auto;
+height: min-content;
+/* top: 0; */
+bottom: 0;
+left: 0;
+transform: translateX(calc(-100% + 76px));
+display: flex;
+z-index: 90;
+align-items: center;
+opacity: 0;
+transition: transform .3s ease-out;
+animation: mostrarContenedorAccesibilidad .3s;
+animation-delay: 2s;
+animation-fill-mode: forwards;
+}
+@keyframes mostrarContenedorAccesibilidad {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.menuAccesibilidad{
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 8px 8px 0;
+}
+.contenedorAccesibilidad > button{
+border-radius: 0 8px 8px 0;
+aspect-ratio: 1;
+}
+.contenedorAccesibilidad button img{
+width: 50px;
+}
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(rgba(0, 0, 0, 0.5) 44%, #000 44%, #000 45%, transparent 45%, transparent 55%, #000 55%, #000 56%, rgba(0, 0, 0, 0.5) 56%);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+  }
+  

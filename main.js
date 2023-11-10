@@ -54,24 +54,7 @@ async function fetchImages(query) {
     }
 }
 
-function isInViewport(elem) {
-    var distance = elem.getBoundingClientRect();
-    return (
-        distance.top < (window.innerHeight || document.documentElement.clientHeight) && distance.bottom > 0
-    );
-}
 
-const nav = document.querySelector('nav')
-const hero = document.querySelector('.hero')
-
-document.addEventListener('scroll', () => {
-    if(isInViewport(hero)){
-       nav.classList.remove("navVisible")
-    }else{
-       nav.classList.add("navVisible")
-
-    }
-})
 var LastScroll = document.documentElement.scrollTop || document.body.scrollTop;
 
 window.onscroll = function (){
@@ -81,6 +64,14 @@ window.onscroll = function (){
   }else{
     document.querySelector("nav").style.transform = "translateY(0)"
   }
+  if(scroll === 0){
+    document.querySelector("nav").style.opacity = 0
+  }else{
+    document.querySelector("nav").style.opacity = 1
+
+  }
   LastScroll = scroll
 
 }
+
+
