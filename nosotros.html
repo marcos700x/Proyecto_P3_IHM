@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GazeWave | Inicio</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="./nosotros.js" defer></script>
+    <script src="./nosotros.js" defer type="module"></script>
+    <script src="accesibilidad.js" defer></script>
+
     <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-    <!-- ANIMATECSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
 <body>
@@ -34,7 +34,7 @@
             <div class="col-md-6 d-none d-md-block">
             </div>
             <div class="col-12 col-md-6 py-5">
-                <div class="animate__animated animate__fadeInDown">
+                <div>
                 <h1 class="display-1 fw-bold mt-5">Nosotros</h1>
                 <p class="fs-4  lh-lg">Buscamos conectar y empoderar a la comunidad de fotógrafos alrededor
                     del mundo, proporcionando una plataforma en linea que fomente la expresión artística, el aprendizaje
@@ -42,20 +42,21 @@
                 </div>
                 <hr class="border-2 my-5">
                 <div class="row">
-                    <div class="col-6 animate__animated animate__fadeInLeft ">
+                    <div class="col-12 col-md-6 text-end text-md-start">
                         <h2>Identidad</h2>
                         <p class="">Aspiramos a ser el faro de la creatividad global, donde cada imagen revela
                             la diversidad de perspectivas y celebra la belleza única de nuestro mundo a través de la
                             fotografía.</p>
                     </div>
-                    <div class="col-6 animate__animated animate__fadeInRight ">
+                    <hr class="d-md-none border-2 my-5">
+                    <div class="col-12 col-md-6 ">
                         <h2>Objetivos</h2>
                         <p class="">Fomentar el crecimiento y reconocimiento de fotógrafos de todo el mundo,
                             promoviendo el arte visual como medio de expresión y entendimiento global.</p>
                     </div>
                 </div>
                 <hr class="border-2 my-5">
-                <div class="animate__animated animate__fadeInUp ">
+                <div class=" text-end text-md-start">
                     <h2>Conocenos</h2>
                     <p class="">GazeWave Gallery abrió sus puertas en 2003 con la misión de acercar el arte
                         contemporáneo a las nuevas generaciones, navegando a lo largo de la evolución del internet y las
@@ -73,10 +74,10 @@
                     <img  class="rounded-circle shadow" src="./assets/top1.jpeg"  width="200" alt="">
                     <p class="fs-3 fw-bold customFont text-center text-nowrap m-0">Aaron Jacob</p>
                 </div>
-                <div class="d-flex flex-row align-items-center gap-3 justify-content-center my-5 col-12">
-                    <div class="d-flex flex-column align-items-center"><span class="fs-1 countUp">85</span><p class="fs-5 text-nowrap text-center">Seguidores</p></div>
-                    <div class="d-flex flex-column align-items-center"><span class="fs-1 countUp">45</span><p class="fs-5 text-nowrap text-center">Fotos subidas</p></div>
-                    <div class="d-flex flex-column align-items-center"><span class="fs-1 countUp">37</span><p class="fs-5 text-nowrap text-center">Me gusta</p></div>
+                <div class="d-flex flex-row align-items-center gap-3 justify-content-center my-5 col-12 flex-wrap">
+                    <div class="d-flex flex-column align-items-center"><span class="fs-1 countUp" id="countUp1" >56224</span><p class="fs-5 text-nowrap text-center">Seguidores</p></div>
+                    <div class="d-flex flex-column align-items-center"><span class="fs-1 countUp" id="countUp2" >204</span><p class="fs-5 text-nowrap text-center">Fotos subidas</p></div>
+                    <div class="d-flex flex-column align-items-center"><span class="fs-1 countUp" id="countUp3" >2502137</span><p class="fs-5 text-nowrap text-center">Me gusta</p></div>
                 </div>
                 <div class="d-flex flex-column gap-3 justify-content-center align-items-center col-12">
                     <h2>Fotografías destacadas</h2>
@@ -96,17 +97,17 @@
             </div>
             <hr class="my-5">
             <div class="row">
-                <div class="d-flex flex-column align-items-center gap-3 col-lg-2">
+                <div class="d-flex flex-column align-items-center gap-3 col-lg-auto">
                     <p class="fs-3 fw-bold customFont text-center text-nowrap m-0 d-none d-lg-block">Mika Borgia</p>
                     <img  class="rounded-circle shadow" src="./assets/top2.jpeg"  width="200" alt="">
                     <p class="fs-3 fw-bold customFont text-center text-nowrap m-0 d-block d-lg-none">Mika Borgia</p>
                 </div>
-                <div class="d-flex flex-row align-items-center gap-3 justify-content-center my-5 col-lg-4">
-                    <div class="d-flex flex-column align-items-center"><span class="fs-1 countUp">85</span><p class="fs-5 text-nowrap text-center">Seguidores</p></div>
-                    <div class="d-flex flex-column align-items-center"><span class="fs-1 countUp">45</span><p class="fs-5 text-nowrap text-center">Fotos subidas</p></div>
-                    <div class="d-flex flex-column align-items-center"><span class="fs-1 countUp">37</span><p class="fs-5 text-nowrap text-center">Me gusta</p></div>
+                <div class="d-flex flex-row align-items-center gap-3 justify-content-center my-5 col-lg-auto flex-wrap">
+                    <div class="d-flex flex-column align-items-center"><span class="fs-1 countUp" id="countUp4">41245</span><p class="fs-5 text-nowrap text-center">Seguidores</p></div>
+                    <div class="d-flex flex-column align-items-center"><span class="fs-1 countUp" id="countUp5">168</span><p class="fs-5 text-nowrap text-center">Fotos subidas</p></div>
+                    <div class="d-flex flex-column align-items-center"><span class="fs-1 countUp" id="countUp6">1512321</span><p class="fs-5 text-nowrap text-center">Me gusta</p></div>
                 </div>
-                <div class="d-flex flex-column gap-3 justify-content-center align-items-center col-12 col-lg-6">
+                <div class="d-flex flex-column gap-3 justify-content-center align-items-center col-12 col-lg-auto">
                     <h2>Fotografías destacadas</h2>
                     <div class="d-flex flex-row gap-3 justify-content-center align-items-center">
                     <div class="w-100">
@@ -124,17 +125,17 @@
             </div>
             <hr class="my-5">
             <div class="row">
-                <div class="d-flex flex-column align-items-center gap-3 col-lg-2">
+                <div class="d-flex flex-column align-items-center gap-3 col-lg-auto">
                     <p class="fs-3 fw-bold customFont text-center text-nowrap m-0 d-none d-lg-block">Bruno Salvadori</p>
                     <img  class="rounded-circle shadow" src="./assets/top3.jpeg"  width="200" alt="">
                     <p class="fs-3 fw-bold customFont text-center text-nowrap m-0 d-block d-lg-none">Bruno Salvadori</p>
                 </div>
-                <div class="d-flex flex-row align-items-center gap-3 justify-content-center my-5 col-lg-4">
-                    <div class="d-flex flex-column align-items-center"><span class="fs-1 countUp">85</span><p class="fs-5 text-nowrap text-center">Seguidores</p></div>
-                    <div class="d-flex flex-column align-items-center"><span class="fs-1 countUp">45</span><p class="fs-5 text-nowrap text-center">Fotos subidas</p></div>
-                    <div class="d-flex flex-column align-items-center"><span class="fs-1 countUp">37</span><p class="fs-5 text-nowrap text-center">Me gusta</p></div>
+                <div class="d-flex flex-row align-items-center gap-3 justify-content-center my-5 col-lg-auto flex-wrap">
+                    <div class="d-flex flex-column align-items-center"><span class="fs-1 countUp" id="countUp7">37889</span><p class="fs-5 text-nowrap text-center">Seguidores</p></div>
+                    <div class="d-flex flex-column align-items-center"><span class="fs-1 countUp" id="countUp8">175</span><p class="fs-5 text-nowrap text-center">Fotos subidas</p></div>
+                    <div class="d-flex flex-column align-items-center"><span class="fs-1 countUp" id="countUp9">1085765</span><p class="fs-5 text-nowrap text-center">Me gusta</p></div>
                 </div>
-                <div class="d-flex flex-column gap-3 justify-content-center align-items-center col-12 col-lg-6">
+                <div class="d-flex flex-column gap-3 justify-content-center align-items-center col-12 col-lg-auto">
                     <h2>Fotografías destacadas</h2>
                     <div class="d-flex flex-row gap-3 justify-content-center align-items-center">
                     <div class="w-100">
@@ -183,7 +184,17 @@
             </footer>
         </div>
     </footer>
-
+    <div class="contenedorAccesibilidad">
+        <div class="menuAccesibilidad shadow">
+            <button class="btn btn-dark rounded-0 p-3 tipografiaBoton">Tipografía dislexia</button>
+            <button class="btn btn-dark rounded-0 p-3 aumentarLetraBoton">A+</button>
+            <button class="btn btn-dark rounded-0 p-3 disminuirLetraBoton">A-</button>
+            <button class="btn btn-dark rounded-0 p-3 guiaLecturaBoton">Guía de lectura</button>
+        </div>
+        <button class="btn btn-dark botonAccesibilidad ">
+            <img src="./assets/universal-access-icon.png" alt="Accesibilidad" title="Accesibilidad">
+        </button>
+    </div>
+    <div class="mask"></div>
 </body>
-
 </html>
