@@ -16,12 +16,6 @@ galleryButtonColor.forEach((button) => {
         fetchImages(galleryInput.value)
     })
 })
-galleryInputColor.addEventListener("keydown", (e) => {
-    if(e.key == "Enter" || e.keyCode == 13){
-        fetchImages(galleryInput.value)
-      }
-      galleryColorIndicator.style.backgroundColor =  galleryInputColor.value;
-})
 
 
 
@@ -43,7 +37,8 @@ async function fetchImages(query) {
     if(galleryInput.value === ""){
         document.querySelector(".containerFilters").style.display = "none"
     }else{
-        document.querySelector(".containerFilters").style.display = screen.width > 530 ? "block" : "flex"
+        document.querySelector(".containerFilters").style.display = "block"
+
     }
 
     try {

@@ -157,7 +157,9 @@ nav{
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 5px;
+    width: 100%;
 }
+
 @media (max-width: 992px) {
     .contenedor-colores{
         grid-template-columns: repeat(6, 1fr);
