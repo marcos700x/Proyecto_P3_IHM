@@ -16,6 +16,13 @@ galleryButtonColor.forEach((button) => {
         fetchImages(galleryInput.value)
     })
 })
+galleryInputColor.addEventListener("keydown", (e) => {
+    if(e.key == "Enter" || e.keyCode == 13){
+        fetchImages(galleryInput.value)
+      }
+      galleryColorIndicator.style.backgroundColor =  galleryInputColor.value;
+})
+
 
 
 galleryButton.addEventListener("click", () => fetchImages(galleryInput.value))
@@ -50,7 +57,6 @@ async function fetchImages(query) {
             const data = await response.json();
             const photos = data.photos;
             galleryTitle.innerText = (query ? `Fotos relacionadas con ${query}` : "Fotos recomendadas")
-            console.log(data)
 
             for (let i = 0; i < photos.length; i++) {
                 const item = document.createElement('div')
@@ -77,15 +83,14 @@ async function fetchImages(query) {
         console.error('Error de red:', error);
     }
     const grid = document.querySelector('.masonry-grid');
-const masonry = await new Masonry(grid, {
+const masonry =  new Masonry(grid, {
     itemSelector: '.masonry-item',
 })
-setTimeout(() => {
-    masonry.layout()
-}, 1000);
-setTimeout(() => {
-    masonry.layout()
-}, 6000);
+
+imagesLoaded( grid ).on( 'progress', function() {
+    masonry.layout();
+  });
+  
 }
 var LastScroll = document.documentElement.scrollTop || document.body.scrollTop;
 
