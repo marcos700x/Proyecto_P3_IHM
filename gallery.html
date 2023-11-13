@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GazeWave | Inicio</title>
+    <title>GazeWave | Galería</title>
     <link rel="stylesheet" href="styles.css">
     <script src="searchScript.js" defer></script>
     <script src="accesibilidad.js" defer></script>
@@ -17,6 +17,7 @@
     <!-- Masonry -->
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js" defer></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 
 </head>
 
@@ -63,7 +64,7 @@
               <div class=" input-group mb-3">
                 <div class="input-group align-items-center">
                     <label class="input-group-text mx-2 colorIndicatorGallery" for="colorInput" ></label>
-                    <input type="text" class="form-select rounded galleryInputColor" placeholder="Color de imagen"  id="colorInput" data-bs-toggle="dropdown">
+                    <input type="text" class="form-select rounded galleryInputColor" placeholder="Color de imagen" maxlength="0" id="colorInput" data-bs-toggle="dropdown">
                     <ul class="dropdown-menu w-100">
                         <div class="contenedor-colores  p-2">
                             <button class="dropdown-item galleryButtonColor" value="red"  style="background-color: red;"></button>
